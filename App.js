@@ -1,32 +1,31 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React, {useState} from 'react';
-import Logo from './components/Logo'
+import { Text, View, StyleSheet, Image } from 'react-native';
 
-// You can import supported modules from npm
-import { Card } from 'react-native-paper';
-
-// or any files within the Snack
-import AssetExample from './components/AssetExample';
-
-export default function App() {
+export default function AssetExample() {
   return (
     <View style={styles.container}>
-    <Logo/>
+      <Text style={styles.paragraph}>
+        Local files and assets can be imported by dragging and dropping them into the editor
+      </Text>
+      <Image style={styles.logo} source={require('../assets/snack-icon.png')} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#ecf0f1',
-    padding: 8,
+    padding: 24,
   },
   paragraph: {
     margin: 24,
-    fontSize: 18,
+    marginTop: 0,
+    fontSize: 14,
     fontWeight: 'bold',
     textAlign: 'center',
   },
+  logo: {
+    height: 128,
+    width: 128,
+  }
 });
